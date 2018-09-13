@@ -2476,3 +2476,93 @@ Processing by SessionsController#create as HTML
 Completed 200 OK in 27ms (Views: 23.3ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/session" for 127.0.0.1 at 2018-09-12 17:24:46 -0700
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/var/rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+
+AbstractController::ActionNotFound - The action 'show' could not be found for SessionsController:
+
+Started POST "/__better_errors/6623980b0417a05c/variables" for 127.0.0.1 at 2018-09-12 17:24:46 -0700
+Started GET "/session/new" for 127.0.0.1 at 2018-09-12 17:25:05 -0700
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered sessions/new.html.erb within layouts/application (4.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+Completed 200 OK in 456ms (Views: 360.3ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-09-12 17:25:11 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"X8Cgs1XEAu0a77FgbJIUzstDpsIG1FZ/CHP7SNHXYRGiCnl7dqKr7OR11RX71W0Aekg3u4Sz+OWmB1NCopBp8g==", "user"=>{"username"=>"asdfas", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asdfas"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+Completed 200 OK in 25ms (Views: 20.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-09-12 17:27:18 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"HTF9R5zlDyZpQ6CFOxTx1Yj3Mc8Y9LCU9OfbuXRu0o/g+6SPv4OmJ5fZxPCsU4gbOfygtpqTHg5ak3OzBynabA==", "user"=>{"username"=>"dfghsfgh", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "dfghsfgh"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 22.2ms)
+
+
+
+NoMethodError - undefined method `<<' for nil:NilClass:
+  app/controllers/sessions_controller.rb:21:in `create'
+
+Started POST "/__better_errors/b24446bcc618f7bc/variables" for 127.0.0.1 at 2018-09-12 17:27:19 -0700
+Started GET "/session/new" for 127.0.0.1 at 2018-09-12 17:28:10 -0700
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (0.8ms)
+  Rendered sessions/new.html.erb within layouts/application (4.3ms)
+  Rendered shared/_errors.html.erb (0.5ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+Completed 200 OK in 128ms (Views: 76.2ms | ActiveRecord: 7.9ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-09-12 17:28:30 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"52cSEiUA8K5ZHVFJUHFam2edpdFV78J9zmSgLepnD/MarcvaBmZZr6eHNTzHNiNV1pY0qNeIbOdgEAgnmSAHEA==", "user"=>{"username"=>"sdfgsd", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "sdfgsd"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (1.0ms)
+  Rendered sessions/new.html.erb within layouts/application (4.1ms)
+  Rendered shared/_errors.html.erb (0.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+Completed 200 OK in 33ms (Views: 28.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2018-09-12 17:28:43 -0700
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.7ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:6
+  Rendered cats/index.html.erb within layouts/application (9.3ms)
+  Rendered shared/_errors.html.erb (0.8ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+Completed 200 OK in 149ms (Views: 107.7ms | ActiveRecord: 5.8ms)
+
+
